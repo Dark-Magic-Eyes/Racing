@@ -59,6 +59,14 @@ gdjs.PlayingCode.GDBackGround_95953Objects1= [];
 gdjs.PlayingCode.GDBackGround_95953Objects2= [];
 gdjs.PlayingCode.GDBackGround_95953Objects3= [];
 gdjs.PlayingCode.GDBackGround_95953Objects4= [];
+gdjs.PlayingCode.GDRightObjects1= [];
+gdjs.PlayingCode.GDRightObjects2= [];
+gdjs.PlayingCode.GDRightObjects3= [];
+gdjs.PlayingCode.GDRightObjects4= [];
+gdjs.PlayingCode.GDLeftObjects1= [];
+gdjs.PlayingCode.GDLeftObjects2= [];
+gdjs.PlayingCode.GDLeftObjects3= [];
+gdjs.PlayingCode.GDLeftObjects4= [];
 gdjs.PlayingCode.GDRed_9595CarObjects1= [];
 gdjs.PlayingCode.GDRed_9595CarObjects2= [];
 gdjs.PlayingCode.GDRed_9595CarObjects3= [];
@@ -788,7 +796,7 @@ if (isConditionTrue_0) {
 gdjs.PlayingCode.mapOfGDgdjs_9546PlayingCode_9546GDGreyCarObjects2Objects = Hashtable.newFrom({"GreyCar": gdjs.PlayingCode.GDGreyCarObjects2});
 gdjs.PlayingCode.mapOfGDgdjs_9546PlayingCode_9546GDRed_95959595CarObjects2ObjectsGDgdjs_9546PlayingCode_9546GDBlue_95959595CarObjects2ObjectsGDgdjs_9546PlayingCode_9546GDGreen_95959595CarObjects2Objects = Hashtable.newFrom({"Red_Car": gdjs.PlayingCode.GDRed_9595CarObjects2, "Blue_Car": gdjs.PlayingCode.GDBlue_9595CarObjects2, "Green_Car": gdjs.PlayingCode.GDGreen_9595CarObjects2});
 gdjs.PlayingCode.mapOfGDgdjs_9546PlayingCode_9546GDGreyCarObjects2Objects = Hashtable.newFrom({"GreyCar": gdjs.PlayingCode.GDGreyCarObjects2});
-gdjs.PlayingCode.asyncCallback14107892 = function (runtimeScene, asyncObjectsList) {
+gdjs.PlayingCode.asyncCallback18288340 = function (runtimeScene, asyncObjectsList) {
 }
 gdjs.PlayingCode.eventsList5 = function(runtimeScene) {
 
@@ -798,14 +806,14 @@ gdjs.PlayingCode.eventsList5 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/point", "{\"public_address\":\"" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) + "\", \"point\":" + gdjs.evtTools.common.toString(Math.round(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(0)) / 10)) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.PlayingCode.asyncCallback14107892(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/point", "{\"public_address\":\"" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) + "\", \"point\":" + gdjs.evtTools.common.toString(Math.round(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(0)) / 10)) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.PlayingCode.asyncCallback18288340(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PlayingCode.asyncCallback14108268 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PlayingCode.asyncCallback18291076 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Main Menu", false);
 }}
 gdjs.PlayingCode.eventsList6 = function(runtimeScene) {
@@ -816,7 +824,7 @@ gdjs.PlayingCode.eventsList6 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PlayingCode.asyncCallback14108268(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PlayingCode.asyncCallback18291076(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -836,7 +844,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14107340);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18289812);
 }
 }
 }
@@ -1292,15 +1300,13 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("BackGround_2"), gdjs.PlayingCode.GDBackGround_95952Objects1);
 gdjs.copyArray(runtimeScene.getObjects("BackGround_3"), gdjs.PlayingCode.GDBackGround_95953Objects1);
-{gdjs.playerAuthentication.displayAuthenticationBanner(runtimeScene);
-}{gdjs.evtTools.runtimeScene.setBackgroundColor(runtimeScene, "71;88;111");
+{gdjs.evtTools.runtimeScene.setBackgroundColor(runtimeScene, "71;88;111");
 }{for(var i = 0, len = gdjs.PlayingCode.GDBackGround_95952Objects1.length ;i < len;++i) {
     gdjs.PlayingCode.GDBackGround_95952Objects1[i].getBehavior("Opacity").setOpacity(0);
 }
 }{for(var i = 0, len = gdjs.PlayingCode.GDBackGround_95953Objects1.length ;i < len;++i) {
     gdjs.PlayingCode.GDBackGround_95953Objects1[i].getBehavior("Opacity").setOpacity(0);
 }
-}{gdjs.playerAuthentication.removeAuthenticationBanner(runtimeScene);
 }
 { //Subevents
 gdjs.PlayingCode.eventsList0(runtimeScene);} //End of subevents
@@ -1416,6 +1422,14 @@ gdjs.PlayingCode.GDBackGround_95953Objects1.length = 0;
 gdjs.PlayingCode.GDBackGround_95953Objects2.length = 0;
 gdjs.PlayingCode.GDBackGround_95953Objects3.length = 0;
 gdjs.PlayingCode.GDBackGround_95953Objects4.length = 0;
+gdjs.PlayingCode.GDRightObjects1.length = 0;
+gdjs.PlayingCode.GDRightObjects2.length = 0;
+gdjs.PlayingCode.GDRightObjects3.length = 0;
+gdjs.PlayingCode.GDRightObjects4.length = 0;
+gdjs.PlayingCode.GDLeftObjects1.length = 0;
+gdjs.PlayingCode.GDLeftObjects2.length = 0;
+gdjs.PlayingCode.GDLeftObjects3.length = 0;
+gdjs.PlayingCode.GDLeftObjects4.length = 0;
 gdjs.PlayingCode.GDRed_9595CarObjects1.length = 0;
 gdjs.PlayingCode.GDRed_9595CarObjects2.length = 0;
 gdjs.PlayingCode.GDRed_9595CarObjects3.length = 0;

@@ -31,7 +31,7 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0xc75770 = function GDJSInlineCode(runtimeScene, objects) {
+gdjs.Main_32MenuCode.userFunc0xd9a728 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
   // Người dùng không đang truy cập từ một thiết bị di động
@@ -55,7 +55,7 @@ gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GD
 
 var objects = [];
 objects.push.apply(objects,gdjs.Main_32MenuCode.GDConnectWalletObjects2);
-gdjs.Main_32MenuCode.userFunc0xc75770(runtimeScene, objects);
+gdjs.Main_32MenuCode.userFunc0xd9a728(runtimeScene, objects);
 
 }
 
@@ -94,7 +94,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xc76190 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xb4eba8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if (typeof window.ethereum !== 'undefined') {
@@ -114,7 +114,7 @@ gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xc76190(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xb4eba8(runtimeScene);
 
 }
 

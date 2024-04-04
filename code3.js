@@ -95,6 +95,16 @@ gdjs.LeaderBoardCode.GDBackButtonObjects2= [];
 gdjs.LeaderBoardCode.GDBackButtonObjects3= [];
 gdjs.LeaderBoardCode.GDBackButtonObjects4= [];
 gdjs.LeaderBoardCode.GDBackButtonObjects5= [];
+gdjs.LeaderBoardCode.GDUpObjects1= [];
+gdjs.LeaderBoardCode.GDUpObjects2= [];
+gdjs.LeaderBoardCode.GDUpObjects3= [];
+gdjs.LeaderBoardCode.GDUpObjects4= [];
+gdjs.LeaderBoardCode.GDUpObjects5= [];
+gdjs.LeaderBoardCode.GDDownObjects1= [];
+gdjs.LeaderBoardCode.GDDownObjects2= [];
+gdjs.LeaderBoardCode.GDDownObjects3= [];
+gdjs.LeaderBoardCode.GDDownObjects4= [];
+gdjs.LeaderBoardCode.GDDownObjects5= [];
 gdjs.LeaderBoardCode.GDRed_9595CarObjects1= [];
 gdjs.LeaderBoardCode.GDRed_9595CarObjects2= [];
 gdjs.LeaderBoardCode.GDRed_9595CarObjects3= [];
@@ -117,7 +127,7 @@ gdjs.LeaderBoardCode.GDCatObjects4= [];
 gdjs.LeaderBoardCode.GDCatObjects5= [];
 
 
-gdjs.LeaderBoardCode.asyncCallback14209652 = function (runtimeScene, asyncObjectsList) {
+gdjs.LeaderBoardCode.asyncCallback16906628 = function (runtimeScene, asyncObjectsList) {
 gdjs.copyArray(runtimeScene.getObjects("Mask"), gdjs.LeaderBoardCode.GDMaskObjects3);
 gdjs.copyArray(runtimeScene.getObjects("Mask2"), gdjs.LeaderBoardCode.GDMask2Objects3);
 {for(var i = 0, len = gdjs.LeaderBoardCode.GDMaskObjects3.length ;i < len;++i) {
@@ -135,7 +145,7 @@ gdjs.LeaderBoardCode.eventsList0 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/leaderboard", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.LeaderBoardCode.asyncCallback14209652(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/leaderboard", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.LeaderBoardCode.asyncCallback16906628(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -499,6 +509,51 @@ gdjs.copyArray(runtimeScene.getObjects("Mask2"), gdjs.LeaderBoardCode.GDMask2Obj
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Down"), gdjs.LeaderBoardCode.GDDownObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Mask"), gdjs.LeaderBoardCode.GDMaskObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.LeaderBoardCode.GDDownObjects2.length;i<l;++i) {
+    if ( gdjs.LeaderBoardCode.GDDownObjects2[i].getBehavior("ButtonFSM").IsPressed((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
+        isConditionTrue_0 = true;
+        gdjs.LeaderBoardCode.GDDownObjects2[k] = gdjs.LeaderBoardCode.GDDownObjects2[i];
+        ++k;
+    }
+}
+gdjs.LeaderBoardCode.GDDownObjects2.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.LeaderBoardCode.GDMaskObjects2.length;i<l;++i) {
+    if ( gdjs.LeaderBoardCode.GDMaskObjects2[i].getY() < gdjs.evtTools.variable.getVariableChildCount(runtimeScene.getScene().getVariables().getFromIndex(0)) * 60 ) {
+        isConditionTrue_0 = true;
+        gdjs.LeaderBoardCode.GDMaskObjects2[k] = gdjs.LeaderBoardCode.GDMaskObjects2[i];
+        ++k;
+    }
+}
+gdjs.LeaderBoardCode.GDMaskObjects2.length = k;
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("BackGround"), gdjs.LeaderBoardCode.GDBackGroundObjects2);
+/* Reuse gdjs.LeaderBoardCode.GDMaskObjects2 */
+gdjs.copyArray(runtimeScene.getObjects("Mask2"), gdjs.LeaderBoardCode.GDMask2Objects2);
+{gdjs.evtTools.camera.setCameraY(runtimeScene, gdjs.evtTools.camera.getCameraY(runtimeScene, "", 0) + (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)), "", 0);
+}{for(var i = 0, len = gdjs.LeaderBoardCode.GDBackGroundObjects2.length ;i < len;++i) {
+    gdjs.LeaderBoardCode.GDBackGroundObjects2[i].setY(gdjs.LeaderBoardCode.GDBackGroundObjects2[i].getY() + (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
+}
+}{for(var i = 0, len = gdjs.LeaderBoardCode.GDMaskObjects2.length ;i < len;++i) {
+    gdjs.LeaderBoardCode.GDMaskObjects2[i].setY(gdjs.LeaderBoardCode.GDMaskObjects2[i].getY() + (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
+}
+}{for(var i = 0, len = gdjs.LeaderBoardCode.GDMask2Objects2.length ;i < len;++i) {
+    gdjs.LeaderBoardCode.GDMask2Objects2[i].setY(gdjs.LeaderBoardCode.GDMask2Objects2[i].getY() + (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
+}
+}}
+
+}
+
+
+{
+
 gdjs.copyArray(runtimeScene.getObjects("Mask"), gdjs.LeaderBoardCode.GDMaskObjects2);
 
 let isConditionTrue_0 = false;
@@ -528,6 +583,51 @@ gdjs.copyArray(runtimeScene.getObjects("Mask2"), gdjs.LeaderBoardCode.GDMask2Obj
 }
 }{for(var i = 0, len = gdjs.LeaderBoardCode.GDMask2Objects2.length ;i < len;++i) {
     gdjs.LeaderBoardCode.GDMask2Objects2[i].setY(gdjs.LeaderBoardCode.GDMask2Objects2[i].getY() - (1000 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mask"), gdjs.LeaderBoardCode.GDMaskObjects2);
+gdjs.copyArray(runtimeScene.getObjects("Up"), gdjs.LeaderBoardCode.GDUpObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.LeaderBoardCode.GDUpObjects2.length;i<l;++i) {
+    if ( gdjs.LeaderBoardCode.GDUpObjects2[i].getBehavior("ButtonFSM").IsPressed((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
+        isConditionTrue_0 = true;
+        gdjs.LeaderBoardCode.GDUpObjects2[k] = gdjs.LeaderBoardCode.GDUpObjects2[i];
+        ++k;
+    }
+}
+gdjs.LeaderBoardCode.GDUpObjects2.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.LeaderBoardCode.GDMaskObjects2.length;i<l;++i) {
+    if ( gdjs.LeaderBoardCode.GDMaskObjects2[i].getY() > 0 ) {
+        isConditionTrue_0 = true;
+        gdjs.LeaderBoardCode.GDMaskObjects2[k] = gdjs.LeaderBoardCode.GDMaskObjects2[i];
+        ++k;
+    }
+}
+gdjs.LeaderBoardCode.GDMaskObjects2.length = k;
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("BackGround"), gdjs.LeaderBoardCode.GDBackGroundObjects2);
+/* Reuse gdjs.LeaderBoardCode.GDMaskObjects2 */
+gdjs.copyArray(runtimeScene.getObjects("Mask2"), gdjs.LeaderBoardCode.GDMask2Objects2);
+{gdjs.evtTools.camera.setCameraY(runtimeScene, gdjs.evtTools.camera.getCameraY(runtimeScene, "", 0) - (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)), "", 0);
+}{for(var i = 0, len = gdjs.LeaderBoardCode.GDBackGroundObjects2.length ;i < len;++i) {
+    gdjs.LeaderBoardCode.GDBackGroundObjects2[i].setY(gdjs.LeaderBoardCode.GDBackGroundObjects2[i].getY() - (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
+}
+}{for(var i = 0, len = gdjs.LeaderBoardCode.GDMaskObjects2.length ;i < len;++i) {
+    gdjs.LeaderBoardCode.GDMaskObjects2[i].setY(gdjs.LeaderBoardCode.GDMaskObjects2[i].getY() - (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
+}
+}{for(var i = 0, len = gdjs.LeaderBoardCode.GDMask2Objects2.length ;i < len;++i) {
+    gdjs.LeaderBoardCode.GDMask2Objects2[i].setY(gdjs.LeaderBoardCode.GDMask2Objects2[i].getY() - (500 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
 }
 }}
 
@@ -816,6 +916,16 @@ gdjs.LeaderBoardCode.GDBackButtonObjects2.length = 0;
 gdjs.LeaderBoardCode.GDBackButtonObjects3.length = 0;
 gdjs.LeaderBoardCode.GDBackButtonObjects4.length = 0;
 gdjs.LeaderBoardCode.GDBackButtonObjects5.length = 0;
+gdjs.LeaderBoardCode.GDUpObjects1.length = 0;
+gdjs.LeaderBoardCode.GDUpObjects2.length = 0;
+gdjs.LeaderBoardCode.GDUpObjects3.length = 0;
+gdjs.LeaderBoardCode.GDUpObjects4.length = 0;
+gdjs.LeaderBoardCode.GDUpObjects5.length = 0;
+gdjs.LeaderBoardCode.GDDownObjects1.length = 0;
+gdjs.LeaderBoardCode.GDDownObjects2.length = 0;
+gdjs.LeaderBoardCode.GDDownObjects3.length = 0;
+gdjs.LeaderBoardCode.GDDownObjects4.length = 0;
+gdjs.LeaderBoardCode.GDDownObjects5.length = 0;
 gdjs.LeaderBoardCode.GDRed_9595CarObjects1.length = 0;
 gdjs.LeaderBoardCode.GDRed_9595CarObjects2.length = 0;
 gdjs.LeaderBoardCode.GDRed_9595CarObjects3.length = 0;
