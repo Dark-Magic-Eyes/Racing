@@ -31,19 +31,20 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0x8c9d30 = function GDJSInlineCode(runtimeScene, objects) {
+gdjs.Main_32MenuCode.userFunc0xc758c8 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
-if (typeof window.ethereum !== 'undefined') {
+  // Người dùng không đang truy cập từ một thiết bị di động
+  if (typeof window.ethereum !== 'undefined') {
   // MetaMask is detected
   window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
     const address = accounts[0]; // Địa chỉ ví MetaMask
     console.log(address);
     runtimeScene.getGame().getVariables().get("WalletAddress").setString(address);
   });
-} else {
-  // MetaMask is not detected
-  console.log("Hello");
+  } else {
+    // MetaMask is not detected
+    console.log("Hello");
 }
 };
 gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
@@ -54,7 +55,7 @@ gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GD
 
 var objects = [];
 objects.push.apply(objects,gdjs.Main_32MenuCode.GDConnectWalletObjects2);
-gdjs.Main_32MenuCode.userFunc0x8c9d30(runtimeScene, objects);
+gdjs.Main_32MenuCode.userFunc0xc758c8(runtimeScene, objects);
 
 }
 
@@ -93,7 +94,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x8ca4d8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xc76338 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if (typeof window.ethereum !== 'undefined') {
@@ -113,12 +114,25 @@ gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x8ca4d8(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xc76338(runtimeScene);
 
 }
 
 
 };gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+if (isConditionTrue_0) {
+{gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
+}}
+
+}
+
 
 {
 
@@ -135,7 +149,8 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDPlayButtonObjects1.length;i<l;
 }
 gdjs.Main_32MenuCode.GDPlayButtonObjects1.length = k;
 if (isConditionTrue_0) {
-
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Playing", false);
+}
 { //Subevents
 gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
 }
