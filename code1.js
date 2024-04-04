@@ -874,6 +874,49 @@ gdjs.PlayingCode.eventsList6(runtimeScene);} //End of subevents
 
 {
 
+/* Reuse gdjs.PlayingCode.GDBlue_9595CarObjects1 */
+/* Reuse gdjs.PlayingCode.GDGreen_9595CarObjects1 */
+/* Reuse gdjs.PlayingCode.GDRed_9595CarObjects1 */
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.PlayingCode.GDRed_9595CarObjects1.length;i<l;++i) {
+    if ( gdjs.PlayingCode.GDRed_9595CarObjects1[i].getBehavior("Animation").hasAnimationEnded() ) {
+        isConditionTrue_0 = true;
+        gdjs.PlayingCode.GDRed_9595CarObjects1[k] = gdjs.PlayingCode.GDRed_9595CarObjects1[i];
+        ++k;
+    }
+}
+gdjs.PlayingCode.GDRed_9595CarObjects1.length = k;
+for (var i = 0, k = 0, l = gdjs.PlayingCode.GDBlue_9595CarObjects1.length;i<l;++i) {
+    if ( gdjs.PlayingCode.GDBlue_9595CarObjects1[i].getBehavior("Animation").hasAnimationEnded() ) {
+        isConditionTrue_0 = true;
+        gdjs.PlayingCode.GDBlue_9595CarObjects1[k] = gdjs.PlayingCode.GDBlue_9595CarObjects1[i];
+        ++k;
+    }
+}
+gdjs.PlayingCode.GDBlue_9595CarObjects1.length = k;
+for (var i = 0, k = 0, l = gdjs.PlayingCode.GDGreen_9595CarObjects1.length;i<l;++i) {
+    if ( gdjs.PlayingCode.GDGreen_9595CarObjects1[i].getBehavior("Animation").hasAnimationEnded() ) {
+        isConditionTrue_0 = true;
+        gdjs.PlayingCode.GDGreen_9595CarObjects1[k] = gdjs.PlayingCode.GDGreen_9595CarObjects1[i];
+        ++k;
+    }
+}
+gdjs.PlayingCode.GDGreen_9595CarObjects1.length = k;
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.PlayingCode.eventsList7(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.PlayingCode.eventsList9 = function(runtimeScene) {
+
+{
+
 gdjs.copyArray(runtimeScene.getObjects("GreyCar"), gdjs.PlayingCode.GDGreyCarObjects2);
 
 let isConditionTrue_0 = false;
@@ -1084,42 +1127,16 @@ for (var i = 0, k = 0, l = gdjs.PlayingCode.GDGreen_9595CarObjects1.length;i<l;+
 }
 gdjs.PlayingCode.GDGreen_9595CarObjects1.length = k;
 if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.PlayingCode.GDRed_9595CarObjects1.length;i<l;++i) {
-    if ( gdjs.PlayingCode.GDRed_9595CarObjects1[i].getBehavior("Animation").hasAnimationEnded() ) {
-        isConditionTrue_0 = true;
-        gdjs.PlayingCode.GDRed_9595CarObjects1[k] = gdjs.PlayingCode.GDRed_9595CarObjects1[i];
-        ++k;
-    }
+{gdjs.evtTools.sound.unloadAllAudio(runtimeScene);
 }
-gdjs.PlayingCode.GDRed_9595CarObjects1.length = k;
-for (var i = 0, k = 0, l = gdjs.PlayingCode.GDBlue_9595CarObjects1.length;i<l;++i) {
-    if ( gdjs.PlayingCode.GDBlue_9595CarObjects1[i].getBehavior("Animation").hasAnimationEnded() ) {
-        isConditionTrue_0 = true;
-        gdjs.PlayingCode.GDBlue_9595CarObjects1[k] = gdjs.PlayingCode.GDBlue_9595CarObjects1[i];
-        ++k;
-    }
-}
-gdjs.PlayingCode.GDBlue_9595CarObjects1.length = k;
-for (var i = 0, k = 0, l = gdjs.PlayingCode.GDGreen_9595CarObjects1.length;i<l;++i) {
-    if ( gdjs.PlayingCode.GDGreen_9595CarObjects1[i].getBehavior("Animation").hasAnimationEnded() ) {
-        isConditionTrue_0 = true;
-        gdjs.PlayingCode.GDGreen_9595CarObjects1[k] = gdjs.PlayingCode.GDGreen_9595CarObjects1[i];
-        ++k;
-    }
-}
-gdjs.PlayingCode.GDGreen_9595CarObjects1.length = k;
-}
-if (isConditionTrue_0) {
-
 { //Subevents
-gdjs.PlayingCode.eventsList7(runtimeScene);} //End of subevents
+gdjs.PlayingCode.eventsList8(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.PlayingCode.eventsList9 = function(runtimeScene) {
+};gdjs.PlayingCode.eventsList10 = function(runtimeScene) {
 
 {
 
@@ -1143,7 +1160,7 @@ gdjs.copyArray(runtimeScene.getObjects("Speed"), gdjs.PlayingCode.GDSpeedObjects
 }
 
 
-};gdjs.PlayingCode.eventsList10 = function(runtimeScene) {
+};gdjs.PlayingCode.eventsList11 = function(runtimeScene) {
 
 {
 
@@ -1199,7 +1216,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.PlayingCode.eventsList11 = function(runtimeScene) {
+};gdjs.PlayingCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -1213,7 +1230,7 @@ if (isConditionTrue_0) {
 }{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(3), true);
 }
 { //Subevents
-gdjs.PlayingCode.eventsList10(runtimeScene);} //End of subevents
+gdjs.PlayingCode.eventsList11(runtimeScene);} //End of subevents
 }
 
 }
@@ -1289,7 +1306,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.PlayingCode.eventsList12 = function(runtimeScene) {
+};gdjs.PlayingCode.eventsList13 = function(runtimeScene) {
 
 {
 
@@ -1307,6 +1324,8 @@ gdjs.copyArray(runtimeScene.getObjects("BackGround_3"), gdjs.PlayingCode.GDBackG
 }{for(var i = 0, len = gdjs.PlayingCode.GDBackGround_95953Objects1.length ;i < len;++i) {
     gdjs.PlayingCode.GDBackGround_95953Objects1[i].getBehavior("Opacity").setOpacity(0);
 }
+}{gdjs.evtTools.sound.unloadAllAudio(runtimeScene);
+}{gdjs.evtTools.sound.playSound(runtimeScene, "344480-Fiat500-Loop_05-Engine-HIGH_RPM-Steady-OTFA.wav", true, 100, 1);
 }
 { //Subevents
 gdjs.PlayingCode.eventsList0(runtimeScene);} //End of subevents
@@ -1339,13 +1358,6 @@ gdjs.PlayingCode.eventsList4(runtimeScene);
 {
 
 
-gdjs.PlayingCode.eventsList8(runtimeScene);
-}
-
-
-{
-
-
 gdjs.PlayingCode.eventsList9(runtimeScene);
 }
 
@@ -1353,7 +1365,14 @@ gdjs.PlayingCode.eventsList9(runtimeScene);
 {
 
 
-gdjs.PlayingCode.eventsList11(runtimeScene);
+gdjs.PlayingCode.eventsList10(runtimeScene);
+}
+
+
+{
+
+
+gdjs.PlayingCode.eventsList12(runtimeScene);
 }
 
 
@@ -1447,7 +1466,7 @@ gdjs.PlayingCode.GDCatObjects2.length = 0;
 gdjs.PlayingCode.GDCatObjects3.length = 0;
 gdjs.PlayingCode.GDCatObjects4.length = 0;
 
-gdjs.PlayingCode.eventsList12(runtimeScene);
+gdjs.PlayingCode.eventsList13(runtimeScene);
 
 return;
 

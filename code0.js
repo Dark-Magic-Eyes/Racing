@@ -31,7 +31,22 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0xd9a728 = function GDJSInlineCode(runtimeScene, objects) {
+gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.sound.isSoundOnChannelPlaying(runtimeScene, 1));
+if (isConditionTrue_0) {
+{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "5bf6889c0b81a767e32df186cf8b43e85b322048528a39cdc33512c30b5336e5_26 - super scary cave dragon.aac", 1, true, 100, 1);
+}}
+
+}
+
+
+};gdjs.Main_32MenuCode.userFunc0x969e98 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
   // Người dùng không đang truy cập từ một thiết bị di động
@@ -47,7 +62,7 @@ runtimeScene.setBackgroundColor(100,100,240);
     console.log("Hello");
 }
 };
-gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -55,12 +70,12 @@ gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GD
 
 var objects = [];
 objects.push.apply(objects,gdjs.Main_32MenuCode.GDConnectWalletObjects2);
-gdjs.Main_32MenuCode.userFunc0xd9a728(runtimeScene, objects);
+gdjs.Main_32MenuCode.userFunc0x969e98(runtimeScene, objects);
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 
 {
 
@@ -71,7 +86,7 @@ isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGam
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList0(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
 }
 
 }
@@ -94,7 +109,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xb4eba8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x10c1b80 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if (typeof window.ethereum !== 'undefined') {
@@ -109,17 +124,17 @@ if (typeof window.ethereum !== 'undefined') {
   console.log("Hello");
 }
 };
-gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xb4eba8(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x10c1b80(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -129,7 +144,11 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 {gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
-}}
+}{gdjs.evtTools.sound.playSound(runtimeScene, "5bf6889c0b81a767e32df186cf8b43e85b322048528a39cdc33512c30b5336e5_26 - super scary cave dragon.aac", true, 50, 1);
+}
+{ //Subevents
+gdjs.Main_32MenuCode.eventsList0(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -152,7 +171,7 @@ if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Playing", false);
 }
 { //Subevents
-gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
 }
 
 }
@@ -217,7 +236,7 @@ gdjs.Main_32MenuCode.GDConnectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
 }
 
 }
@@ -279,7 +298,7 @@ gdjs.Main_32MenuCode.GDCatObjects1.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects2.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects3.length = 0;
 
-gdjs.Main_32MenuCode.eventsList3(runtimeScene);
+gdjs.Main_32MenuCode.eventsList4(runtimeScene);
 
 return;
 
