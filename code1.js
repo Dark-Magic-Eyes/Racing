@@ -1300,6 +1300,7 @@ gdjs.copyArray(runtimeScene.getObjects("BackGround_3"), gdjs.PlayingCode.GDBackG
 }{for(var i = 0, len = gdjs.PlayingCode.GDBackGround_95953Objects1.length ;i < len;++i) {
     gdjs.PlayingCode.GDBackGround_95953Objects1[i].getBehavior("Opacity").setOpacity(0);
 }
+}{gdjs.playerAuthentication.removeAuthenticationBanner(runtimeScene);
 }
 { //Subevents
 gdjs.PlayingCode.eventsList0(runtimeScene);} //End of subevents
