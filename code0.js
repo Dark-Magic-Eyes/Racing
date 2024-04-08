@@ -1,34 +1,24 @@
 gdjs.Main_32MenuCode = {};
 gdjs.Main_32MenuCode.GDPlayButtonObjects1= [];
 gdjs.Main_32MenuCode.GDPlayButtonObjects2= [];
-gdjs.Main_32MenuCode.GDPlayButtonObjects3= [];
 gdjs.Main_32MenuCode.GDMenuTitleObjects1= [];
 gdjs.Main_32MenuCode.GDMenuTitleObjects2= [];
-gdjs.Main_32MenuCode.GDMenuTitleObjects3= [];
 gdjs.Main_32MenuCode.GDBackGroundObjects1= [];
 gdjs.Main_32MenuCode.GDBackGroundObjects2= [];
-gdjs.Main_32MenuCode.GDBackGroundObjects3= [];
 gdjs.Main_32MenuCode.GDSelectCarButtonObjects1= [];
 gdjs.Main_32MenuCode.GDSelectCarButtonObjects2= [];
-gdjs.Main_32MenuCode.GDSelectCarButtonObjects3= [];
 gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects1= [];
 gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects2= [];
-gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects3= [];
 gdjs.Main_32MenuCode.GDConnectWalletObjects1= [];
 gdjs.Main_32MenuCode.GDConnectWalletObjects2= [];
-gdjs.Main_32MenuCode.GDConnectWalletObjects3= [];
 gdjs.Main_32MenuCode.GDRed_9595CarObjects1= [];
 gdjs.Main_32MenuCode.GDRed_9595CarObjects2= [];
-gdjs.Main_32MenuCode.GDRed_9595CarObjects3= [];
 gdjs.Main_32MenuCode.GDBlue_9595CarObjects1= [];
 gdjs.Main_32MenuCode.GDBlue_9595CarObjects2= [];
-gdjs.Main_32MenuCode.GDBlue_9595CarObjects3= [];
 gdjs.Main_32MenuCode.GDGreen_9595CarObjects1= [];
 gdjs.Main_32MenuCode.GDGreen_9595CarObjects2= [];
-gdjs.Main_32MenuCode.GDGreen_9595CarObjects3= [];
 gdjs.Main_32MenuCode.GDCatObjects1= [];
 gdjs.Main_32MenuCode.GDCatObjects2= [];
-gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
 gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
@@ -46,95 +36,63 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xf03af8 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.Main_32MenuCode.userFunc0x8d6198 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-runtimeScene.setBackgroundColor(100,100,240);
-  // Người dùng không đang truy cập từ một thiết bị di động
-  if (typeof window.ethereum !== 'undefined') {
-  // MetaMask is detected
-  window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-    const address = accounts[0]; // Địa chỉ ví MetaMask
-    console.log(address);
-    runtimeScene.getGame().getVariables().get("WalletAddress").setString(address);
-  });
-  } else {
-    // MetaMask is not detected
-    console.log("Hello");
-}
+// runtimeScene.setBackgroundColor(100,100,240);
+// if (typeof window.ethereum !== 'undefined') {
+//   // MetaMask is detected
+//   window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
+//     const address = accounts[0]; // Địa chỉ ví MetaMask
+//     console.log(address);
+//     runtimeScene.getGame().getVariables().get("WalletAddress").setString(address);
+//   });
+// } else {
+//   // MetaMask is not detected
+//   console.log("Hello");
+// }
+
+// tonConnectUI.openModal();
+tonConnectUI.connectWallet().then(wallet => {
+    console.log(wallet);
+    const rawAddress = connector.wallet.account.address; // like '0:abcdef123456789...'
+    const bouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress);
+    const testnetOnlyBouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress, true);
+    console.log("Hello:" + bouncableUserFriendlyAddress);
+    console.log(testnetOnlyBouncableUserFriendlyAddress);
+});
 };
 gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GDConnectWalletObjects2);
 
-var objects = [];
-objects.push.apply(objects,gdjs.Main_32MenuCode.GDConnectWalletObjects2);
-gdjs.Main_32MenuCode.userFunc0xf03af8(runtimeScene, objects);
+gdjs.Main_32MenuCode.userFunc0x8d6198(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty";
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty");
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
-}
-if (isConditionTrue_0) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Playing", false);
-}}
-
-}
-
-
-};gdjs.Main_32MenuCode.userFunc0x9d5e00 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x8d6218 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-runtimeScene.setBackgroundColor(100,100,240);
-if (typeof window.ethereum !== 'undefined') {
-  // MetaMask is detected
-  window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-    const address = accounts[0]; // Địa chỉ ví MetaMask
-    console.log(address);
-    runtimeScene.getGame().getVariables().get("WalletAddress").setString(address);
-  });
-} else {
-  // MetaMask is not detected
-  console.log("Hello");
-}
+// runtimeScene.setBackgroundColor(100,100,240);
+
+// const currentWallet = tonConnectUI.walletInfo;
+
+// console.log(tonConnectUI.account);
+// console.log(currentWallet);
+// runtimeScene.getGame().getVariables().get("WalletAddress").setString(currentWallet);
+
 };
-gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x9d5e00(runtimeScene);
+let isConditionTrue_0 = false;
+{
+}
 
 }
 
-
-};gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -168,10 +126,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDPlayButtonObjects1.length;i<l;
 gdjs.Main_32MenuCode.GDPlayButtonObjects1.length = k;
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Playing", false);
-}
-{ //Subevents
-gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
-}
+}}
 
 }
 
@@ -235,8 +190,16 @@ gdjs.Main_32MenuCode.GDConnectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
 }
+
+}
+
+
+{
+
+
+gdjs.Main_32MenuCode.userFunc0x8d6218(runtimeScene);
 
 }
 
@@ -268,36 +231,26 @@ runtimeScene.getOnceTriggers().startNewFrame();
 
 gdjs.Main_32MenuCode.GDPlayButtonObjects1.length = 0;
 gdjs.Main_32MenuCode.GDPlayButtonObjects2.length = 0;
-gdjs.Main_32MenuCode.GDPlayButtonObjects3.length = 0;
 gdjs.Main_32MenuCode.GDMenuTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDMenuTitleObjects2.length = 0;
-gdjs.Main_32MenuCode.GDMenuTitleObjects3.length = 0;
 gdjs.Main_32MenuCode.GDBackGroundObjects1.length = 0;
 gdjs.Main_32MenuCode.GDBackGroundObjects2.length = 0;
-gdjs.Main_32MenuCode.GDBackGroundObjects3.length = 0;
 gdjs.Main_32MenuCode.GDSelectCarButtonObjects1.length = 0;
 gdjs.Main_32MenuCode.GDSelectCarButtonObjects2.length = 0;
-gdjs.Main_32MenuCode.GDSelectCarButtonObjects3.length = 0;
 gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects1.length = 0;
 gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects2.length = 0;
-gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects3.length = 0;
 gdjs.Main_32MenuCode.GDConnectWalletObjects1.length = 0;
 gdjs.Main_32MenuCode.GDConnectWalletObjects2.length = 0;
-gdjs.Main_32MenuCode.GDConnectWalletObjects3.length = 0;
 gdjs.Main_32MenuCode.GDRed_9595CarObjects1.length = 0;
 gdjs.Main_32MenuCode.GDRed_9595CarObjects2.length = 0;
-gdjs.Main_32MenuCode.GDRed_9595CarObjects3.length = 0;
 gdjs.Main_32MenuCode.GDBlue_9595CarObjects1.length = 0;
 gdjs.Main_32MenuCode.GDBlue_9595CarObjects2.length = 0;
-gdjs.Main_32MenuCode.GDBlue_9595CarObjects3.length = 0;
 gdjs.Main_32MenuCode.GDGreen_9595CarObjects1.length = 0;
 gdjs.Main_32MenuCode.GDGreen_9595CarObjects2.length = 0;
-gdjs.Main_32MenuCode.GDGreen_9595CarObjects3.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects1.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects2.length = 0;
-gdjs.Main_32MenuCode.GDCatObjects3.length = 0;
 
-gdjs.Main_32MenuCode.eventsList4(runtimeScene);
+gdjs.Main_32MenuCode.eventsList2(runtimeScene);
 
 return;
 
