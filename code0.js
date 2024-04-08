@@ -38,15 +38,15 @@ gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.sound.isSoundOnChannelPlaying(runtimeScene, 1));
+isConditionTrue_0 = !(gdjs.evtTools.sound.isSoundOnChannelPlaying(runtimeScene, 0));
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "5bf6889c0b81a767e32df186cf8b43e85b322048528a39cdc33512c30b5336e5_26 - super scary cave dragon.aac", 1, true, 100, 1);
+{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "5bf6889c0b81a767e32df186cf8b43e85b322048528a39cdc33512c30b5336e5_26 - super scary cave dragon.aac", 1, false, 50, 1);
 }}
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x969e98 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.Main_32MenuCode.userFunc0xf03af8 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
   // Người dùng không đang truy cập từ một thiết bị di động
@@ -70,7 +70,7 @@ gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GD
 
 var objects = [];
 objects.push.apply(objects,gdjs.Main_32MenuCode.GDConnectWalletObjects2);
-gdjs.Main_32MenuCode.userFunc0x969e98(runtimeScene, objects);
+gdjs.Main_32MenuCode.userFunc0xf03af8(runtimeScene, objects);
 
 }
 
@@ -109,7 +109,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x10c1b80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x9d5e00 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if (typeof window.ethereum !== 'undefined') {
@@ -129,7 +129,7 @@ gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x10c1b80(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x9d5e00(runtimeScene);
 
 }
 
@@ -144,7 +144,6 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 {gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
-}{gdjs.evtTools.sound.playSound(runtimeScene, "5bf6889c0b81a767e32df186cf8b43e85b322048528a39cdc33512c30b5336e5_26 - super scary cave dragon.aac", true, 50, 1);
 }
 { //Subevents
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);} //End of subevents
