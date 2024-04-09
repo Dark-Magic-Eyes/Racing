@@ -36,29 +36,14 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x8d6198 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x10d06b8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-// runtimeScene.setBackgroundColor(100,100,240);
-// if (typeof window.ethereum !== 'undefined') {
-//   // MetaMask is detected
-//   window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-//     const address = accounts[0]; // Địa chỉ ví MetaMask
-//     console.log(address);
-//     runtimeScene.getGame().getVariables().get("WalletAddress").setString(address);
-//   });
-// } else {
-//   // MetaMask is not detected
-//   console.log("Hello");
-// }
-
-// tonConnectUI.openModal();
 tonConnectUI.connectWallet().then(wallet => {
-    console.log(wallet);
-    const rawAddress = connector.wallet.account.address; // like '0:abcdef123456789...'
-    const bouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress);
-    const testnetOnlyBouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress, true);
-    console.log("Hello:" + bouncableUserFriendlyAddress);
-    console.log(testnetOnlyBouncableUserFriendlyAddress);
+    let rawAddress = wallet.account.address;
+    const address = new TonWeb.utils.Address(rawAddress);
+    console.log(address.toString(true, true, false, false));
+    const nonBounceableAddress = address.toString(true, true, false, false);
+    runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
 });
 };
 gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
@@ -66,23 +51,12 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x8d6198(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x10d06b8(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x8d6218 = function GDJSInlineCode(runtimeScene) {
-"use strict";
-// runtimeScene.setBackgroundColor(100,100,240);
-
-// const currentWallet = tonConnectUI.walletInfo;
-
-// console.log(tonConnectUI.account);
-// console.log(currentWallet);
-// runtimeScene.getGame().getVariables().get("WalletAddress").setString(currentWallet);
-
-};
-gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 
 {
 
@@ -188,18 +162,18 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDConnectWalletObjects1.length;i
 }
 gdjs.Main_32MenuCode.GDConnectWalletObjects1.length = k;
 if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty";
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
+}
+}
+if (isConditionTrue_0) {
 
 { //Subevents
 gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
 }
-
-}
-
-
-{
-
-
-gdjs.Main_32MenuCode.userFunc0x8d6218(runtimeScene);
 
 }
 
@@ -217,7 +191,7 @@ isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getG
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GDConnectWalletObjects1);
 {for(var i = 0, len = gdjs.Main_32MenuCode.GDConnectWalletObjects1.length ;i < len;++i) {
-    gdjs.Main_32MenuCode.GDConnectWalletObjects1[i].SetLabelText(gdjs.evtTools.string.subStr(runtimeScene.getGame().getVariables().getFromIndex(2).getAsString(), 0, 6) + "..." + gdjs.evtTools.string.subStr(runtimeScene.getGame().getVariables().getFromIndex(2).getAsString(), gdjs.evtTools.string.strLen(runtimeScene.getGame().getVariables().getFromIndex(2).getAsString()) - 3, 3), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.Main_32MenuCode.GDConnectWalletObjects1[i].SetLabelText(gdjs.evtTools.string.subStr(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), 0, 6) + "..." + gdjs.evtTools.string.subStr(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), gdjs.evtTools.string.strLen(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2))) - 3, 3), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }}
 

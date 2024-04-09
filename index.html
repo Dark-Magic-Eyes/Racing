@@ -144,9 +144,11 @@
 	<script src="data.js" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 	<script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>
+	<script src="node_modules\tonweb\dist\tonweb.js"></script>
 
 </head>
 <body>
+
 	<div id="ton-connect" style="display: none;"></div>
 	<script>
 		const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
@@ -155,18 +157,10 @@
 		});
 	</script>
 	<script>
-		import TonConnect from '@tonconnect/sdk';
-		import { toUserFriendlyAddress } from '@tonconnect/sdk';
-
-		const connector = new TonConnect();
-
-		connector.restoreConnection();
-	</script>
-    
-	<script>
 
     (function() {
         //Initialization
+		window.Telegram.WebApp.expand();
         var game = new gdjs.RuntimeGame(gdjs.projectData, {});
 
         //Create a renderer
