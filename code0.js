@@ -31,6 +31,17 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
+gdjs.Main_32MenuCode.userFunc0x1331550 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+runtimeScene.setBackgroundColor(100,100,240);
+if(tonConnectUI.connected)
+{
+    let rawAddress = tonConnectUI.account.address;
+    const address = new TonWeb.utils.Address(rawAddress);
+    const nonBounceableAddress = address.toString(true, true, false, false);
+    runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
+}
+};
 gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
 
 {
@@ -49,21 +60,13 @@ if (isConditionTrue_0) {
 {
 
 
-let isConditionTrue_0 = false;
-{
-{gdjs.evtTools.storage.readStringFromJSONFile("Wallet", "Address", runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(0));
-}{runtimeScene.getGame().getVariables().getFromIndex(2).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(0)));
-}}
+gdjs.Main_32MenuCode.userFunc0x1331550(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x10160d8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x13318f8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-tonConnectUI.uiOptions = {
-    twaReturnUrl: 'https://t.me/MechaCat_bot/Cat_Race'
-};
-alert(tonConnectUI.connected);
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
     const address = new TonWeb.utils.Address(rawAddress);
@@ -77,7 +80,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x10160d8(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x13318f8(runtimeScene);
 
 }
 
@@ -120,17 +123,13 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x863768 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x1332518 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-tonConnectUI.uiOptions = {
-    twaReturnUrl: 'https://t.me/MechaCat_bot/Cat_Race'
-};
-    tonConnectUI.connectWallet().then(wallet => {
-        let rawAddress = wallet.account.address;
-        const address = new TonWeb.utils.Address(rawAddress);
-        console.log(address.toString(true, true, false, false));
-        const nonBounceableAddress = address.toString(true, true, false, false);
-        runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
+tonConnectUI.connectWallet().then(wallet => {
+    let rawAddress = wallet.account.address;
+    const address = new TonWeb.utils.Address(rawAddress);
+    const nonBounceableAddress = address.toString(true, true, false, false);
+    runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
 })
 
 };
@@ -139,7 +138,7 @@ gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x863768(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x1332518(runtimeScene);
 
 }
 
@@ -253,7 +252,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDConnectWalletObjects1.length;i
 gdjs.Main_32MenuCode.GDConnectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "0";
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty";
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
@@ -273,7 +272,7 @@ gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "0");
+isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
@@ -283,7 +282,6 @@ gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GD
 {for(var i = 0, len = gdjs.Main_32MenuCode.GDConnectWalletObjects1.length ;i < len;++i) {
     gdjs.Main_32MenuCode.GDConnectWalletObjects1[i].SetLabelText(gdjs.evtTools.string.subStr(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), 0, 6) + "..." + gdjs.evtTools.string.subStr(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), gdjs.evtTools.string.strLen(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2))) - 3, 3), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
-}{gdjs.evtTools.storage.writeStringInJSONFile("Wallet", "Address", gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)));
 }}
 
 }
