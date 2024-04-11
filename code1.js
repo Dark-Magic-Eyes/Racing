@@ -796,7 +796,7 @@ if (isConditionTrue_0) {
 gdjs.PlayingCode.mapOfGDgdjs_9546PlayingCode_9546GDGreyCarObjects2Objects = Hashtable.newFrom({"GreyCar": gdjs.PlayingCode.GDGreyCarObjects2});
 gdjs.PlayingCode.mapOfGDgdjs_9546PlayingCode_9546GDRed_95959595CarObjects2ObjectsGDgdjs_9546PlayingCode_9546GDBlue_95959595CarObjects2ObjectsGDgdjs_9546PlayingCode_9546GDGreen_95959595CarObjects2Objects = Hashtable.newFrom({"Red_Car": gdjs.PlayingCode.GDRed_9595CarObjects2, "Blue_Car": gdjs.PlayingCode.GDBlue_9595CarObjects2, "Green_Car": gdjs.PlayingCode.GDGreen_9595CarObjects2});
 gdjs.PlayingCode.mapOfGDgdjs_9546PlayingCode_9546GDGreyCarObjects2Objects = Hashtable.newFrom({"GreyCar": gdjs.PlayingCode.GDGreyCarObjects2});
-gdjs.PlayingCode.asyncCallback14971212 = function (runtimeScene, asyncObjectsList) {
+gdjs.PlayingCode.asyncCallback10085172 = function (runtimeScene, asyncObjectsList) {
 }
 gdjs.PlayingCode.eventsList5 = function(runtimeScene) {
 
@@ -806,14 +806,14 @@ gdjs.PlayingCode.eventsList5 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/point", "{\"public_address\":\"" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) + "\", \"point\":" + gdjs.evtTools.common.toString(Math.round(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(0)) / 10)) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.PlayingCode.asyncCallback14971212(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/point", "{\"public_address\":\"" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) + "\", \"point\":" + gdjs.evtTools.common.toString(Math.round(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(0)) / 10)) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.PlayingCode.asyncCallback10085172(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.PlayingCode.asyncCallback14971588 = function (runtimeScene, asyncObjectsList) {
+};gdjs.PlayingCode.asyncCallback10078308 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Main Menu", false);
 }}
 gdjs.PlayingCode.eventsList6 = function(runtimeScene) {
@@ -824,7 +824,7 @@ gdjs.PlayingCode.eventsList6 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PlayingCode.asyncCallback14971588(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(2), (runtimeScene) => (gdjs.PlayingCode.asyncCallback10078308(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -844,7 +844,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14970660);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10078108);
 }
 }
 }

@@ -77,7 +77,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15042196);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16096876);
 }
 }
 }
@@ -105,7 +105,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15043572);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16098660);
 }
 }
 }
@@ -133,7 +133,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15043772);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16100716);
 }
 }
 }
@@ -161,7 +161,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15046252);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16102500);
 }
 }
 }
