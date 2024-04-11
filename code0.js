@@ -63,6 +63,7 @@ let isConditionTrue_0 = false;
 tonConnectUI.uiOptions = {
     twaReturnUrl: 'https://t.me/MechaCat_bot/Cat_Race'
 };
+alert(tonConnectUI.wallet);
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
     const address = new TonWeb.utils.Address(rawAddress);
