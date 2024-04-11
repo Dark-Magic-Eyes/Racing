@@ -58,7 +58,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x12956d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x8669d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -73,7 +73,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x12956d0(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x8669d0(runtimeScene);
 
 }
 
@@ -116,22 +116,29 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x12962a8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x865e58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-tonConnectUI.connectWallet().then(wallet => {
-    let rawAddress = wallet.account.address;
-    const address = new TonWeb.utils.Address(rawAddress);
-    console.log(address.toString(true, true, false, false));
-    const nonBounceableAddress = address.toString(true, true, false, false);
-    runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
-});
+tonConnectUI.uiOptions = {
+    twaReturnUrl: 'https://t.me/MechaCat_bot/Cat_Race'
+};
+console.log("Hello: " + runtimeScene.getGame().getVariables().get("WalletAddress"));
+tonConnectUI.disconnect().then(()=>{
+    tonConnectUI.connectWallet().then(wallet => {
+        let rawAddress = wallet.account.address;
+        const address = new TonWeb.utils.Address(rawAddress);
+        console.log(address.toString(true, true, false, false));
+        const nonBounceableAddress = address.toString(true, true, false, false);
+        runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
+    });
+})
+
 };
 gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x12962a8(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x865e58(runtimeScene);
 
 }
 
