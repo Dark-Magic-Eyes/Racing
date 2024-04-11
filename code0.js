@@ -31,7 +31,7 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0x1331550 = function GDJSInlineCode(runtimeScene) {
+gdjs.Main_32MenuCode.userFunc0x857a90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if(tonConnectUI.connected)
@@ -60,12 +60,12 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x1331550(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x857a90(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x13318f8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xc6d7d8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -80,7 +80,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x13318f8(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xc6d7d8(runtimeScene);
 
 }
 
@@ -92,7 +92,7 @@ gdjs.Main_32MenuCode.userFunc0x13318f8(runtimeScene);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "0";
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty";
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
@@ -111,7 +111,7 @@ gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "0");
+isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
@@ -123,7 +123,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x1332518 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x81b1f8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -138,7 +138,7 @@ gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x1332518(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x81b1f8(runtimeScene);
 
 }
 
