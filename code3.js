@@ -127,7 +127,7 @@ gdjs.LeaderBoardCode.GDCatObjects4= [];
 gdjs.LeaderBoardCode.GDCatObjects5= [];
 
 
-gdjs.LeaderBoardCode.asyncCallback15095796 = function (runtimeScene, asyncObjectsList) {
+gdjs.LeaderBoardCode.asyncCallback15161612 = function (runtimeScene, asyncObjectsList) {
 gdjs.copyArray(runtimeScene.getObjects("Mask"), gdjs.LeaderBoardCode.GDMaskObjects3);
 gdjs.copyArray(runtimeScene.getObjects("Mask2"), gdjs.LeaderBoardCode.GDMask2Objects3);
 {for(var i = 0, len = gdjs.LeaderBoardCode.GDMaskObjects3.length ;i < len;++i) {
@@ -145,7 +145,7 @@ gdjs.LeaderBoardCode.eventsList0 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/leaderboard", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.LeaderBoardCode.asyncCallback15095796(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://api.inz-dev.esollabs.com/v1/dragon-game/point/leaderboard", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.LeaderBoardCode.asyncCallback15161612(runtimeScene, asyncObjectsList)));
 }
 }
 
