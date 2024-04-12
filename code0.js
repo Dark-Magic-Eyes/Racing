@@ -34,7 +34,7 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0xf21458 = function GDJSInlineCode(runtimeScene) {
+gdjs.Main_32MenuCode.userFunc0x860360 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if(tonConnectUI.connected)
@@ -64,12 +64,12 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xf21458(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x860360(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xd2ec10 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x8607d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -86,7 +86,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xd2ec10(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x8607d0(runtimeScene);
 
 }
 
@@ -129,7 +129,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x1100e78 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xed1f08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 tonConnectUI.disconnect().then(()=>{
@@ -144,7 +144,7 @@ gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x1100e78(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xed1f08(runtimeScene);
 
 }
 
@@ -159,7 +159,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x855dc0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x8e7130 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 tonConnectUI.connectWallet().then(wallet => {
@@ -176,7 +176,7 @@ gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x855dc0(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x8e7130(runtimeScene);
 
 }
 
@@ -467,7 +467,6 @@ gdjs.Main_32MenuCode.eventsList4(runtimeScene);} //End of subevents
 {
 
 gdjs.copyArray(runtimeScene.getObjects("ConnectWallet"), gdjs.Main_32MenuCode.GDConnectWalletObjects1);
-gdjs.copyArray(runtimeScene.getObjects("DisconectWallet"), gdjs.Main_32MenuCode.GDDisconectWalletObjects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
@@ -487,24 +486,13 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length;i<l;++i) {
-    if ( gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariableBoolean(gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariables().getFromIndex(1), false) ) {
-        isConditionTrue_0 = true;
-        gdjs.Main_32MenuCode.GDDisconectWalletObjects1[k] = gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i];
-        ++k;
-    }
-}
-gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14990180);
 }
 }
 }
 }
-}
 if (isConditionTrue_0) {
-/* Reuse gdjs.Main_32MenuCode.GDDisconectWalletObjects1 */
+gdjs.copyArray(runtimeScene.getObjects("DisconectWallet"), gdjs.Main_32MenuCode.GDDisconectWalletObjects1);
 {for(var i = 0, len = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length ;i < len;++i) {
     gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].returnVariable(gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariables().getFromIndex(0)).setNumber(gdjs.evtTools.common.mod((gdjs.RuntimeObject.getVariableNumber(gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariables().getFromIndex(0))) + 1, 2));
 }
