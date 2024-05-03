@@ -40,7 +40,7 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0xfccfc0 = function GDJSInlineCode(runtimeScene) {
+gdjs.Main_32MenuCode.userFunc0xcb43c8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if(tonConnectUI.connected)
@@ -70,12 +70,12 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xfccfc0(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xcb43c8(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xfcce40 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xcaffd8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -92,7 +92,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xfcce40(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xcaffd8(runtimeScene);
 
 }
 
@@ -135,7 +135,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xfb0e60 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0x8edef8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 tonConnectUI.disconnect().then(()=>{
@@ -150,7 +150,7 @@ gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xfb0e60(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0x8edef8(runtimeScene);
 
 }
 
@@ -165,7 +165,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xfc46e0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xcb5b90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -182,12 +182,26 @@ gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xfc46e0(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xcb5b90(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene, asyncObjectsList) {
+};gdjs.Main_32MenuCode.userFunc0xcb57f8 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+window.Telegram.WebApp.openLink('https://connect-wallet-web.vercel.app/')
+};
+gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
+
+{
+
+
+gdjs.Main_32MenuCode.userFunc0xcb57f8(runtimeScene);
+
+}
+
+
+};gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene, asyncObjectsList) {
 
 {
 
@@ -216,15 +230,15 @@ gdjs.copyArray(runtimeScene.getObjects("TonWallet"), gdjs.Main_32MenuCode.GDTonW
 }
 
 
-};gdjs.Main_32MenuCode.asyncCallback9067700 = function (runtimeScene, asyncObjectsList) {
+};gdjs.Main_32MenuCode.asyncCallback15098388 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(2)), runtimeScene.getScene().getVariables().getFromIndex(0));
 }{runtimeScene.getScene().getVariables().getFromIndex(3).setString(gdjs.evtTools.variable.getFirstVariableString(runtimeScene.getScene().getVariables().getFromIndex(0)));
 }{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "sui_api");
 }
 { //Subevents
-gdjs.Main_32MenuCode.eventsList5(runtimeScene, asyncObjectsList);} //End of subevents
+gdjs.Main_32MenuCode.eventsList6(runtimeScene, asyncObjectsList);} //End of subevents
 }
-gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
 
 {
 
@@ -232,14 +246,14 @@ gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://connect-wallet-web.vercel.app/api/address", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(2), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback9067700(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://connect-wallet-web.vercel.app/api/address", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(2), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback15098388(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList8 = function(runtimeScene) {
 
 {
 
@@ -295,7 +309,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDPlayButtonObjects1.length;i<l;
 gdjs.Main_32MenuCode.GDPlayButtonObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9590188);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15077196);
 }
 }
 if (isConditionTrue_0) {
@@ -323,7 +337,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDSelectCarButtonObjects1.length
 gdjs.Main_32MenuCode.GDSelectCarButtonObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15075124);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15081492);
 }
 }
 if (isConditionTrue_0) {
@@ -349,7 +363,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects1.leng
 gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15075372);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15082260);
 }
 }
 if (isConditionTrue_0) {
@@ -388,7 +402,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9620860);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15083788);
 }
 }
 }
@@ -428,7 +442,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(4), true);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11230796);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15085780);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -579,7 +593,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16735548);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15091300);
 }
 }
 }
@@ -632,7 +646,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10215476);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15092828);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -691,17 +705,19 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13750636);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15095196);
 }
 }
 }
 }
 }
 if (isConditionTrue_0) {
-{gdjs.evtTools.window.openURL("https://connect-wallet-web.vercel.app/", runtimeScene);
-}{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(1), true);
+{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(1), true);
 }{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "sui_api");
-}}
+}
+{ //Subevents
+gdjs.Main_32MenuCode.eventsList5(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -728,7 +744,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14109420);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15096604);
 }
 }
 }
@@ -764,7 +780,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList6(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList7(runtimeScene);} //End of subevents
 }
 
 }
@@ -815,7 +831,7 @@ gdjs.Main_32MenuCode.GDCatObjects1.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects2.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects3.length = 0;
 
-gdjs.Main_32MenuCode.eventsList7(runtimeScene);
+gdjs.Main_32MenuCode.eventsList8(runtimeScene);
 
 return;
 
