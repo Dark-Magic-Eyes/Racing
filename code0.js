@@ -40,7 +40,7 @@ gdjs.Main_32MenuCode.GDCatObjects2= [];
 gdjs.Main_32MenuCode.GDCatObjects3= [];
 
 
-gdjs.Main_32MenuCode.userFunc0xad7280 = function GDJSInlineCode(runtimeScene) {
+gdjs.Main_32MenuCode.userFunc0xfccfc0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 if(tonConnectUI.connected)
@@ -70,12 +70,12 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xad7280(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xfccfc0(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xad75e0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xfcce40 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 tonConnectUI.connectWallet().then(wallet => {
     let rawAddress = wallet.account.address;
@@ -92,7 +92,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xad75e0(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xfcce40(runtimeScene);
 
 }
 
@@ -135,7 +135,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0x9a8660 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xfb0e60 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 tonConnectUI.disconnect().then(()=>{
@@ -150,7 +150,7 @@ gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0x9a8660(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xfb0e60(runtimeScene);
 
 }
 
@@ -165,7 +165,29 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene, asyncObjectsList) {
+};gdjs.Main_32MenuCode.userFunc0xfc46e0 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+tonConnectUI.connectWallet().then(wallet => {
+    let rawAddress = wallet.account.address;
+    const address = new TonWeb.utils.Address(rawAddress);
+    console.log(address.toString(true, true, false, false));
+    const nonBounceableAddress = address.toString(true, true, false, false);
+    runtimeScene.getGame().getVariables().get("WalletAddress").setString(nonBounceableAddress);
+    let object = runtimeScene.getObjects("DisconectWallet")[0];
+    object.getVariables().get("Hide").setBoolean(false);
+});
+};
+gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
+
+{
+
+
+gdjs.Main_32MenuCode.userFunc0xfc46e0(runtimeScene);
+
+}
+
+
+};gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene, asyncObjectsList) {
 
 {
 
@@ -173,6 +195,10 @@ let isConditionTrue_0 = false;
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(3)) != "empty";
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(3)) != "";
+}
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("SuiWallet"), gdjs.Main_32MenuCode.GDSuiWalletObjects2);
 gdjs.copyArray(runtimeScene.getObjects("TonWallet"), gdjs.Main_32MenuCode.GDTonWalletObjects2);
@@ -190,15 +216,15 @@ gdjs.copyArray(runtimeScene.getObjects("TonWallet"), gdjs.Main_32MenuCode.GDTonW
 }
 
 
-};gdjs.Main_32MenuCode.asyncCallback15058348 = function (runtimeScene, asyncObjectsList) {
+};gdjs.Main_32MenuCode.asyncCallback9067700 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(2)), runtimeScene.getScene().getVariables().getFromIndex(0));
 }{runtimeScene.getScene().getVariables().getFromIndex(3).setString(gdjs.evtTools.variable.getFirstVariableString(runtimeScene.getScene().getVariables().getFromIndex(0)));
 }{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "sui_api");
 }
 { //Subevents
-gdjs.Main_32MenuCode.eventsList4(runtimeScene, asyncObjectsList);} //End of subevents
+gdjs.Main_32MenuCode.eventsList5(runtimeScene, asyncObjectsList);} //End of subevents
 }
-gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
 
 {
 
@@ -206,14 +232,14 @@ gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://connect-wallet-web.vercel.app/api/address", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(2), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback15058348(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://connect-wallet-web.vercel.app/api/address", "", "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(2), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback9067700(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
 
 {
 
@@ -297,7 +323,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDSelectCarButtonObjects1.length
 gdjs.Main_32MenuCode.GDSelectCarButtonObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15111252);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15075124);
 }
 }
 if (isConditionTrue_0) {
@@ -323,7 +349,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects1.leng
 gdjs.Main_32MenuCode.GDLeaderBoardButtonObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9149772);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15075372);
 }
 }
 if (isConditionTrue_0) {
@@ -362,7 +388,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10268540);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9620860);
 }
 }
 }
@@ -402,7 +428,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(4), true);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(8931700);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11230796);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -553,7 +579,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15057508);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16735548);
 }
 }
 }
@@ -569,6 +595,65 @@ gdjs.copyArray(runtimeScene.getObjects("TonWallet"), gdjs.Main_32MenuCode.GDTonW
     gdjs.Main_32MenuCode.GDSuiWalletObjects1[i].hide(false);
 }
 }}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("DisconectWallet"), gdjs.Main_32MenuCode.GDDisconectWalletObjects1);
+gdjs.copyArray(runtimeScene.getObjects("TonWallet"), gdjs.Main_32MenuCode.GDTonWalletObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDTonWalletObjects1.length;i<l;++i) {
+    if ( gdjs.Main_32MenuCode.GDTonWalletObjects1[i].getBehavior("ButtonFSM").IsClicked((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
+        isConditionTrue_0 = true;
+        gdjs.Main_32MenuCode.GDTonWalletObjects1[k] = gdjs.Main_32MenuCode.GDTonWalletObjects1[i];
+        ++k;
+    }
+}
+gdjs.Main_32MenuCode.GDTonWalletObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "empty";
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length;i<l;++i) {
+    if ( gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariableBoolean(gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariables().getFromIndex(1), true) ) {
+        isConditionTrue_0 = true;
+        gdjs.Main_32MenuCode.GDDisconectWalletObjects1[k] = gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i];
+        ++k;
+    }
+}
+gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10215476);
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length;i<l;++i) {
+    if ( gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariableBoolean(gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i].getVariables().getFromIndex(1), true) ) {
+        isConditionTrue_0 = true;
+        gdjs.Main_32MenuCode.GDDisconectWalletObjects1[k] = gdjs.Main_32MenuCode.GDDisconectWalletObjects1[i];
+        ++k;
+    }
+}
+gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
+}
+}
+}
+}
+}
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.Main_32MenuCode.eventsList4(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -606,7 +691,7 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length
 gdjs.Main_32MenuCode.GDDisconectWalletObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15073124);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13750636);
 }
 }
 }
@@ -643,7 +728,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)) == "undefined");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15052052);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14109420);
 }
 }
 }
@@ -679,7 +764,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList5(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList6(runtimeScene);} //End of subevents
 }
 
 }
@@ -730,7 +815,7 @@ gdjs.Main_32MenuCode.GDCatObjects1.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects2.length = 0;
 gdjs.Main_32MenuCode.GDCatObjects3.length = 0;
 
-gdjs.Main_32MenuCode.eventsList6(runtimeScene);
+gdjs.Main_32MenuCode.eventsList7(runtimeScene);
 
 return;
 
